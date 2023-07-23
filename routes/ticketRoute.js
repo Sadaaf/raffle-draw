@@ -46,7 +46,7 @@ router.post("/bulk", (req, res) => {
 });
 
 router.get("/draw", (req, res) => {
-  const winnerCount = req.params.wc ?? 3;
+  const winnerCount = req.query.wc ?? 3;
   const winners = db.draw(winnerCount);
   res.status(200).json(winners);
 });
