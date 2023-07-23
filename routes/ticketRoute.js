@@ -48,7 +48,7 @@ router.post("/bulk", (req, res) => {
 router.get("/draw", (req, res) => {
   const winnerCount = req.query.wc ?? 3;
   const winners = db.draw(winnerCount);
-  res.status(200).json(winners);
+  res.status(200).json({message: 'The winners are', winners});
 });
 
 router.get("", (_req, res) => {
